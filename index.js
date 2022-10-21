@@ -3,6 +3,7 @@ const { parse } = require("path")
 const user = prompt('pls enter your username')
 console.log(`welcome ${user}`)
 let levels = 2
+let point = 5
 for (i = 2; i <= 10; i++) {
   const secret = Math.floor(Math.random() * i) + 1
   let guess = parseInt(prompt(`enter a number between 1 and ${i}`));
@@ -13,7 +14,8 @@ for (i = 2; i <= 10; i++) {
     i--
     console.log('try again: your number is too low')
   } else {
-    console.log(`you win: the number is ${secret} [enter the next level]`)
+    console.log(`you win:${secret} you've gotten ${point} [enter level ${levels}] `)
     levels++
+    point += 5
   }
 }
